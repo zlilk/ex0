@@ -8,7 +8,7 @@ module.exports = class Hotel extends events {
 		this.name = name;
 		this.type = type;
 		this.rank = rank;
-		this.msg = [];
+		this.msg = new Array();
 	}
 
 
@@ -35,13 +35,13 @@ module.exports = class Hotel extends events {
 	//reducing stars in stars rank
 	reduceStars(amount) {
 		this.rank -= amount;
-		this.emit('rankReduced');
+		this.emit('rankReduced'); //fire event
 	}
 
 	//adding stars in stars rank
 	addStars(amount) {
 		this.rank += amount;
-		this.emit('rankGrowth');
+		this.emit('rankGrowth'); //fire event
 	}	
 
 	//checks if stars rank is under zero
@@ -66,6 +66,7 @@ module.exports = class Hotel extends events {
 		}
 	}
 }
+
 
 
 
